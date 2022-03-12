@@ -7,15 +7,14 @@ const url ="https://www.themoviedb.org/3"
 
 
 
-export default function MovieDBAPI(num){
+export default function MovieDBAPI(){
 
-    
     const[movie,setmovie]=useState([])
 
     const fetchMovies=async()=>{
         try {
             const response = await axios.get(
-              `https://api.themoviedb.org/3/discover/movie?api_key=d6a162fc58997f23acfaf32d37774c18&language=en-US&page=${num.value}`
+              "https://api.themoviedb.org/3/discover/movie?api_key=d6a162fc58997f23acfaf32d37774c18&language=en-US"
             );
       
             setmovie(response.data.results);
@@ -29,19 +28,15 @@ export default function MovieDBAPI(num){
         }, []);
 
        
-        return (
-                <div  className={styles.flexi}>
-                {movie.map((movie,index) => (
+        return (<div className={styles.tituloInicial}>
+            <h2 >Ultimos estrenos</h2>
+                <div  className={styles.flexi2}>
+                {movie.filter(movie =>movie.popularity>1900.000).map((movie,index) => (
                     <div key={index}>
-                        <h3> {movie.title}</h3>
-                      <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="imagenes" className={styles.container}/>
-                      <h5> Personas que la recomiendan: {movie.popularity}</h5>
-                <h5>Idioma original: {movie.original_language} </h5>
+                      <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="imagenes" className={styles.container2}/>
                     </div>
                 ))}
             </div>
+            </div>
         );
     }
-
-  
-  

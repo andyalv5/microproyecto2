@@ -1,0 +1,56 @@
+.container{
+    height: 470px;
+    width: 100%;
+}
+
+.flexi{
+    padding:0px 30% 0px 30%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+
+.container2{
+    height: 470px;
+    width: 100%;
+}
+
+.flexi2{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container3{
+    height: 325px;
+    width: 250px;
+}
+
+.flexi3{
+    display: flex;
+    flex-wrap: row;
+    white-space: nowrap;
+    background: transparent;
+    height: 100%;
+    border-radius:15px;
+    overflow: auto;
+}
+
+h3{
+   padding:0px 0px 0px 0px;
+   text-align: center;
+}
+
+h5{
+    text-align: justify;
+
+}
+
+p{
+    font-size: 12px;
+}
+
+.tituloInicial{
+    text-align: center;
+}
+

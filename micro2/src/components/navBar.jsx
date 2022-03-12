@@ -11,9 +11,15 @@ function Navbar() {
       </li>
       <li>
         <Link to="/peliculas" className={styles.link}>
-            Peliculas
+            Lista de Peliculas
         </Link>
       </li>
+      <li>
+        <Link to="/detallePelicula" className={styles.link}>
+            Vista detallada
+        </Link>
+      </li>
+
     </ul>
   );
 }

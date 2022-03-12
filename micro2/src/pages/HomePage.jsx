@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import MovieSearcher from "../components/movieSearcher"
 import MovieDBAPI from "./MovieDBAPI"
+import HomePelis from "./homePelis"
 
 
 export default function HomePage() {
@@ -10,7 +11,7 @@ export default function HomePage() {
             <div>
                 <div>
                     <div>
-                            <MovieDBAPI/>
+                            <HomePelis/>
                     </div>
                 </div>
             </div>
