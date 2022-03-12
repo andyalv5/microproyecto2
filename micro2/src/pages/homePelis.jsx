@@ -1,6 +1,7 @@
 import { useEffect, useState, Fragment } from "react";
 import axios from "axios";
 import styles from "./ComponentsCss.module.css"
+import { useParams,Link } from "react-router-dom";
 
 const apiKey= "d6a162fc58997f23acfaf32d37774c18"
 const url ="https://www.themoviedb.org/3"
@@ -33,7 +34,9 @@ export default function MovieDBAPI(){
                 <div  className={styles.flexi2}>
                 {movie.filter(movie =>movie.popularity>1900.000).map((movie,index) => (
                     <div key={index}>
+                        <Link to ={`/peli/${index}`}>
                       <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="imagenes" className={styles.container2}/>
+                      </Link>
                     </div>
                 ))}
             </div>

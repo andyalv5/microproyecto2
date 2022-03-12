@@ -1,6 +1,7 @@
 import { useEffect, useState, Fragment } from "react";
 import axios from "axios";
 import styles from "./ComponentsCss.module.css"
+import { useParams,Link } from "react-router-dom";
 
 
 export default function Proximo(){
@@ -28,9 +29,11 @@ export default function Proximo(){
                 <div  className={styles.flexi3}>
                 {movie.map((movie,index) => (
                     <div key={index}>
+                        <Link to ={`/pelius/${index}`}>
                         <h3> {movie.title}</h3>
                       <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="imagenes" className={styles.container3}/>
-                      <p> Personas que la recomiendan: {movie.popularity}</p>
+                      </Link>
+                      <p> Les gusto: {movie.popularity}</p>
                 <p>Idioma original: {movie.original_language} </p>
                     </div>
                     

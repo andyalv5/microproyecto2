@@ -4,7 +4,7 @@ import MovieDBAPI from "./MovieDBAPI"
 export default function Peliculas() {
     return (
         <div>
-            <MovieDBAPI num={"3"}/>
+            <MovieDBAPI num={3}/>
         </div>
     )
 }

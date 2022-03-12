@@ -13,6 +13,8 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
+        <Route path="/pelius/:id" element={<DetallePelicula />} ></Route>
+        <Route path="/peli/:id" element={<DetallePelicula />} ></Route>
         <Route path="/" element={<HomePage />} />
         <Route path="/peliculas" element={<Peliculas />} />
         <Route path="/detallePelicula" element={<DetallePelicula />} />
