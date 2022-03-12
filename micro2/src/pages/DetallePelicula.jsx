@@ -11,6 +11,7 @@ export default function DetallePelicula() {
     const{id}=useParams()
 
     const [pagina, paginaconfig]= useState([])
+
     
     useEffect(() => {
         const response = async()=>{
@@ -20,19 +21,26 @@ export default function DetallePelicula() {
         };
         response();
       }, []);
-        
-       
+
+
         return (<div>
             <h3>Proximos Extrenos</h3>
             <div  className={styles.flexi3}>
                 <Proximo/>
             </div>
             <div className={styles.flexi}>
-                <h3>{pagina.original_title}</h3>
-                <img src={`https://image.tmdb.org/t/p/original/${pagina.poster_path}`} alt="imagenes" className={styles.container2}/>
-                {pagina.genres.map((los) =>(
-                    <div><h6>categoria: {los.name} - {los.id}</h6> </div>
-                ))}
+                <h1>{pagina.original_title}</h1>
+                <img src={`https://image.tmdb.org/t/p/original/${pagina.poster_path}`} alt="imagenes" className={styles.container}/>
+               <h6>lenguaje original: "{pagina.original_language}"</h6>
+               <h6>Presupuesto: ${pagina.budget}</h6>
+               <h6>Descripcion:</h6>
+               <h5> {pagina.overview}
+               </h5>
+               <h6> Popularidad: {pagina.popularity}
+               </h6>
+               <h5>Fecha de lanzamiento: {pagina.release_date}</h5>
+               <h5>Estado: {pagina.status} </h5>
+               
             </div>
             </div>
         );

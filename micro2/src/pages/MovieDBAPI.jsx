@@ -11,14 +11,15 @@ const url ="https://www.themoviedb.org/3"
 
 export default function MovieDBAPI(){
 
-    const{num}=useParams();
+    
+
 
     const[movie,setmovie]=useState([])
 
     const fetchMovies=async()=>{
         try {
             const response = await axios.get(
-              `https://api.themoviedb.org/3/discover/movie?api_key=d6a162fc58997f23acfaf32d37774c18&language=en-US&page=${num}`
+              `https://api.themoviedb.org/3/discover/movie?api_key=d6a162fc58997f23acfaf32d37774c18&language=en-US`
             );
       
             setmovie(response.data.results);
@@ -33,6 +34,7 @@ export default function MovieDBAPI(){
 
        
         return (
+          <div>
                 <div  className={styles.flexi}>
                 {movie.map((movie) => (
                     <div key={movie.id}>
@@ -44,6 +46,7 @@ export default function MovieDBAPI(){
                 <h5>Idioma original: {movie.original_language} </h5>
                     </div>
                 ))}
+            </div>
             </div>
         );
     }

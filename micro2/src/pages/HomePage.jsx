@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react'
-import MovieSearcher from "../components/movieSearcher"
 import MovieDBAPI from "./MovieDBAPI"
 import HomePelis from "./homePelis"
 

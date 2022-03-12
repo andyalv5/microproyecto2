@@ -1,0 +1,64 @@
+
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+
+import { auth, googleProvider } from "../utils/firebase";
+
+export default function RegisterPage() {
+  const navigate = useNavigate();
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = async (data) => {
+    console.log({ data });
+    await auth.createUserWithEmailAndPassword(data.email, data.password);
+    navigate("/");
+  };
+
+  const handleLoginWithGoogle = async () => {
+    await auth.signInWithPopup(googleProvider);
+    navigate("/");
+  };
+
+
+  return (
+    <div className="container">
+      <form id="addNewTransactionForm" onSubmit={handleSubmit(onSubmit)}>
+        <h2>Registrarse</h2>
+
+        <label>
+          <span>Email</span>
+          <input
+            {...register("email")}
+            type="email"
+            placeholder="Enter a email"
+          />
+        </label>
+
+        <br />
+        <br />
+
+        <label>
+          <span>Password</span>
+          <input
+            {...register("password")}
+            type="password"
+            placeholder="Enter a password"
+          />
+        </label>
+
+        <br />
+        <br />
+
+        <button type="button" onClick={handleLoginWithGoogle}>
+          Sign up with Google
+        </button>
+        <br />
+        <br />
+
+        <button type="submit" id="btnAddTransaction">
+          Create account
+        </button>
+      </form>
+    </div>
+  );
+}

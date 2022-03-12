@@ -45,8 +45,20 @@ h3{
 }
 
 h5{
+    padding:0px 0px 0px 0px;
     text-align: justify;
+    margin-block-start: 3px;
+    margin-block-end:5px;
 
+}
+
+h1{
+    text-align: center;
+}
+h6{
+    margin-block-start: 3px;
+    margin-block-end:5px;
+    font-size: 16px;
 }
 
 p{
