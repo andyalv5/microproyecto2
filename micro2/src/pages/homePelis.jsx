@@ -33,8 +33,8 @@ export default function MovieDBAPI(){
             <h2 >Ultimos estrenos</h2>
                 <div  className={styles.flexi2}>
                 {movie.filter(movie =>movie.popularity>1900.000).map((movie,index) => (
-                    <div key={index}>
-                        <Link to ={`/peli/${index}`}>
+                    <div key={movie.id}>
+                        <Link to ={`/peli/${movie.id}`}>
                       <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="imagenes" className={styles.container2}/>
                       </Link>
                     </div>

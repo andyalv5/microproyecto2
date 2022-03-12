@@ -27,12 +27,10 @@ export default function Proximo(){
        
         return (
                 <div  className={styles.flexi3}>
-                {movie.map((movie,index) => (
-                    <div key={index}>
-                        <Link to ={`/pelius/${index}`}>
+                {movie.map((movie) => (
+                    <div key={movie.id}>
                         <h3> {movie.title}</h3>
                       <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="imagenes" className={styles.container3}/>
-                      </Link>
                       <p> Les gusto: {movie.popularity}</p>
                 <p>Idioma original: {movie.original_language} </p>
                     </div>

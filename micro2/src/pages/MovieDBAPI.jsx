@@ -34,9 +34,9 @@ export default function MovieDBAPI(){
        
         return (
                 <div  className={styles.flexi}>
-                {movie.map((movie,index) => (
-                    <div key={index}>
-                        <Link to ={`/peli/${index}`}>
+                {movie.map((movie) => (
+                    <div key={movie.id}>
+                        <Link to ={`/peli/${movie.id}`}>
                         <h3> {movie.title}</h3>
                         <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="imagenes" className={styles.container}/>
                         </Link>
